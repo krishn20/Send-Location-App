@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/doYou"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Do you want fine accuracy or not?"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/defaultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/doYou"
+        android:text="Fine Accuracy selected by default"
+        android:layout_margin="18dp"
+        android:textSize="15sp"
+        android:textColor="#FF0000"
+        android:gravity="center" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fine Accuracy"
+        android:layout_below="@+id/defaultText"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:checked="true" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textSize="15sp"
+        android:layout_toRightOf="@+id/checkBox"
+        android:layout_below="@+id/defaultText" />
+
+    <TextView
+        android:id="@+id/lines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox"
+        android:text="----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
+        android:textSize="15dp"
+        android:textColor="#FF00FF" />
+
+    <TextView
+        android:id="@+id/provider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:layout_below="@+id/lines"
+        android:text="No Provider has been selected !"
+        android:textSize="20sp"
+        android:textColor="#FF0000"/>
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/provider"
+        android:gravity="center"
+        android:text="LATITUDE : "
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/latitude"
+        android:gravity="center"
+        android:text="LONGITUDE : "
+        android:textSize="18sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayout"
+        android:layout_below="@id/longitude"
+        android:orientation="vertical"
+        android:layout_margin="30dp">
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone Number" />
+
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_marginLeft="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:hint="Enter Phone Number"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="E-Mail ID" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_below="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="Enter E-mail Address"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/smsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Location through SMS"
+        android:layout_below="@id/tableLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:onClick="smsLocation" />
+
+    <Button
+        android:id="@+id/emailButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Location through E-mail"
+        android:layout_below="@id/smsButton"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="65dp"
+        android:onClick="emailLocation" />
+
+</RelativeLayout>
